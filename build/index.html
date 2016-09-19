@@ -1,0 +1,18 @@
+<html ng-app="movieSearch">
+  <head>
+    <meta charset="utf-8">
+    <title>OMDB Search</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script>
+      var movieSearch = angular.module('movieSearch', []);
+      movieSearch.controller('movieCtrl', function ($scope, $http){
+        $http.get("http://www.omdbapi.com/?t=batman&y=&plot=short&r=json").success(function(data) {
+          $scope.results = data;
+        });
+      });
+    </script>
+  </head>
+  <body ng-controller="movieCtrl">
+    <h1>{{results[0].Title}}</h1>
+  </body>
+</html>
