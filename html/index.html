@@ -1,25 +1,25 @@
 <html ng-app="movieSearch">
-  <head>
-    <meta charset="utf-8">
-    <title>OMDB Search</title>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
-    <script src="main.js"></script>
-  </head>
-  <body ng-controller="movieCtrl">
+<head>
+	<meta charset="utf-8">
+	<title>OMDB Search</title>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+	<script src="main.js"></script>
+</head>
+<body ng-controller="movieCtrl">
 
-  	<form ng-submit="searchOMDB()">
-      <input type="text" ng-model="movieTitle">
-      <input type="submit" value="Search">
-    </form>
+	<form ng-submit="searchOMDB()">
+		<input type="text" ng-model="movieTitle">
+		<input type="submit" value="Search">
+	</form>
 
-
-      <ul ng-repeat="result in results">
-      	<br />
-        <b>{{result.Title}}</b>
-        <br /> 
-        {{result.Year}}
-        <br />
-        <img ng-if="result.Poster != 'N/A'" ng-src="{{result.Poster}}" height=250/>
-      </ul>
-  </body>
+	<ul ng-repeat="result in results">
+		<br />
+		<b>{{result.Title}}</b>
+		<br /> 
+		{{result.Year}}
+		<br />
+		<img ng-if="result.Poster != 'N/A'" ng-src="{{result.Poster}}" height=250/>
+	</ul>
+	
+</body>
 </html>
