@@ -7,8 +7,11 @@
 </head>
 <body ng-controller="movieCtrl">
 
+	<h1>OMDB Movie Search</h1>
+
 	<form ng-submit="searchOMDB()">
-		<input type="text" ng-model="movieTitle">
+		<label for="movieSearch">Search: </label>
+		<input name"movieSearch" type="text" ng-model="movieTitle">
 		<input type="submit" value="Search">
 	</form>
 
@@ -20,6 +23,6 @@
 		<br />
 		<img ng-if="result.Poster != 'N/A'" ng-src="{{result.Poster}}" height=250/>
 	</ul>
-	
+
 </body>
 </html>
